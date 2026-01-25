@@ -1,35 +1,60 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Entypo from '@expo/vector-icons/Entypo';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { Tabs } from "expo-router";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        headerStyle: { backgroundColor: "#f5f5f5" },
+        headerShown: true,
+        headerShadowVisible: false,
+        tabBarStyle: {
+          backgroundColor: "#f5f5f5",
+          borderTopWidth: 0,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+        tabBarActiveTintColor: "#6200ee",
+        tabBarInactiveTintColor: "#626666",
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Today's Habits",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="calendar-today"
+              size={size}
+              color={color}
+            />
+          ),
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="Streaks"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarLabel: "Streaks",
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="line-chart" size={size} color={color} />
+          ),
         }}
       />
+
+       <Tabs.Screen
+        name="Addhabit"
+        options={{
+          tabBarLabel: "Streaks",
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="circle-with-plus" size={size} color={color} />
+          ),
+        }}
+      />
+
+
     </Tabs>
   );
 }
