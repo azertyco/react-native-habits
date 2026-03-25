@@ -47,7 +47,7 @@ export default function TabsLayout() {
        <Tabs.Screen
         name="Addhabit"
         options={{
-          tabBarLabel: "Streaks",
+          tabBarLabel: "Add habit",
           tabBarIcon: ({ color, size }) => (
             <Entypo name="circle-with-plus" size={size} color={color} />
           ),
