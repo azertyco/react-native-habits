@@ -1,3 +1,55 @@
+# Habit Tracker Mobile App
+
+A mobile habit tracking application built with React Native and Appwrite.  
+Users can create habits, complete them based on a chosen frequency, and track streak progression over time.
+
+---
+
+# Features
+
+- User authentication
+- Create and delete habits
+- Daily / Weekly / Monthly habit frequencies
+- Swipe gestures to complete or delete habits
+- Real-time updates using Appwrite subscriptions
+- Habit streak tracking
+- Top streak ranking section
+- Completed habit visual state (reduced opacity + locked completion)
+
+---
+
+# Tech Stack
+
+## Frontend
+- React Native
+- Expo
+- Expo Router
+- TypeScript
+
+## Backend
+- Appwrite Database
+- Appwrite Authentication
+- Appwrite Realtime API
+
+## UI / Libraries
+- React Native Paper
+- React Native Gesture Handler
+- FontAwesome Icons
+- Material Community Icons
+
+---
+
+# Project Structure
+
+```bash
+app/
+├── index.tsx
+├── streaks.tsx
+├── auth/
+├── components/
+├── lib/
+└── utils/
+```
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
